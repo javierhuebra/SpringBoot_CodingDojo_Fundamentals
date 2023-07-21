@@ -14,18 +14,18 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	 	// 1. Anotación
+	// 1. Anotación
         @RequestMapping("/")
         // 3. Método que se asigna a la Solicitud anterior.
         public String hello() { // 3
-                return "Hello World!";
+                return "Hello World! demoaplication";
         }
 
-		// 1. Anotación
+	// 1. Anotación
         @RequestMapping("/random")
         // 3. Método que se asigna a la Solicitud anterior.
         public String random() { // 3
-                return "Estoy corriendo Spring Boot desde vscode, tengo bastantes dudas pero imagino que se iran aclarando a medida que transite el curso, esta muy bueno";
+                return "Esssstoy corriendo Spring Boot desde vscode, tengo bastantes dudas pero imagino que se iran aclarando a medida que transite el curso, esta muy bueno";
         }
 
 }
