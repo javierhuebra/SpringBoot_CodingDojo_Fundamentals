@@ -6,12 +6,3 @@
 <img src="https://user-images.githubusercontent.com/76398557/131226947-00f96d01-6b3a-43ea-9a74-be32e04781ac.png">
 </div>
 
-## Para visualizar esta aplicación:
-### Digite en la consola en el directorio de su preferencia:
-- git clone https://github.com/javierhuebra/SpringBoot_CodingDojo_Fundamentals
-
-### En la consola en la dirección del repositorio local:
-- mvn install
-
-### Para iniciar la aplicación:
-- mvn spring-boot:run
