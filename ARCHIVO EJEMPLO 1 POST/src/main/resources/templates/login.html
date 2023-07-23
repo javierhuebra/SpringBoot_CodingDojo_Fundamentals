@@ -13,6 +13,7 @@
         <button>Login</button>
         <label for="">Al apretar Login el controlador recibe la solicitud POST y retorna la redirecciona a /enviado</label>
     </form>
-    
+    <p style="background-color: red; color: white;" th:if="${error}" >Como tiene un th:if cuando error exista me libera este contenido, si pero el error es: <span th:text="${error}">esto no se ve</span></p>
+    <p th:unless="${error}">Esto cambiará si hay un error</p>
 </body>
 </html>

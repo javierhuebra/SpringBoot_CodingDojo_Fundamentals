@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Este archivo html se guardó en templates y en una carpeta mas para probar el tema de la ruta y practicar como referenciarla para ordenar el codigo mas adelante</p>
+    <h1>El codigo</h1>
+    <form method="POST" action="/elcodigo" >
+        <input type="text" name="code">
+        <input type="submit">
+    </form>
+    <h2 style="background-color: red; color: white;" th:text="${error}">aca aparece</h2>
+</body>
+</html>
