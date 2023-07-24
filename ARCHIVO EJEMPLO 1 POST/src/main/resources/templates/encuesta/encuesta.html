@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+</head>
+
+<body>
+    <h1>Encuesta view</h1>
+    <form method="POST" action="/encuesta">
+        <label>Name: <input type="text" name="nombre"></label>
+        <br>
+
+        <label>Dojo Location:
+            <select id="id-prueba" name="ubicacion">
+                <option value="argentina">Argentina</option>
+                <option value="uruguay">Uruguay</option>
+                <option value="puertorico">Puerto Rico</option>
+                <option value="miami">Miami</option>
+                <option value="italia">Italia</option>
+            </select>
+        </label>
+        <br>
+
+        <label>Favorite Language:
+            <select id="id-prueba" name="lenguaje">
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c">C</option>
+                <option value="c++">C++</option>
+            </select>
+        </label>
+        <br>
+
+        <label>Comment:
+            <br>
+            <textarea name="comentario" cols="30" rows="10" ></textarea>
+        </label>
+        <br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+</html>
