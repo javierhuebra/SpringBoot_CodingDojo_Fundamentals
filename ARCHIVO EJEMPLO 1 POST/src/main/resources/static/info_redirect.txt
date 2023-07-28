@@ -1,0 +1,46 @@
+Cuando utilizas return "redirect:/encuesta/result" en lugar de return "encuesta/result" 
+estás cambiando el tipo de respuesta que envía el controlador al navegador. 
+Esto puede tener un efecto en la forma en que se manejan los datos del modelo.
+
+Cuando usas return "encuesta/result", el controlador simplemente renderiza la vista "result" y 
+pasa los datos del modelo a la vista, lo que permite que Thymeleaf acceda a esos datos 
+y los muestre en el HTML.
+
+Por otro lado, cuando usas return "redirect:/encuesta/result", 
+estás indicando que se realice una redirección a la URL "/encuesta/result". 
+En este caso, el navegador realizará una nueva solicitud HTTP a la URL de redirección, 
+lo que resultará en una nueva ejecución del método renderResultado() que no tiene el modelo actualizado con los datos del formulario. 
+Por eso, los datos no se mostrarán en la vista "result" en este caso.
+
+Para solucionar esto, si deseas usar la redirección y aún así mostrar los datos en la vista "result", 
+puedes pasar los datos como parámetros en la URL durante la redirección y luego extraer esos parámetros en el método renderResultado(). 
+Por ejemplo:
+
+En el método enviarDatos():
+
+
+if (lenguaje.equals("java")) {
+    return "redirect:/encuesta/result?nombre=" + nombre + "&ubicacion=" + ubicacion + "&lenguaje=" + lenguaje + "&comentario=" + comentario;
+} else {
+    return "redirect:/encuesta/result";
+}
+En el método renderResultado():
+
+
+@RequestMapping("/result")
+public String renderResultado(@RequestParam(required = false) String nombre,
+                              @RequestParam(required = false) String ubicacion,
+                              @RequestParam(required = false) String lenguaje,
+                              @RequestParam(required = false) String comentario,
+                              Model model) {
+
+    if (nombre != null && ubicacion != null && lenguaje != null && comentario != null) {
+        model.addAttribute("nombre", nombre);
+        model.addAttribute("ubicacion", ubicacion);
+        model.addAttribute("lenguaje", lenguaje);
+        model.addAttribute("comentario", comentario);
+    }
+
+    return "encuesta/result";
+}
+De esta manera, incluso después de la redirección, los parámetros se capturan y se utilizan para actualizar el modelo antes de renderizar la vista "result", lo que permitirá que los datos se muestren en la página.

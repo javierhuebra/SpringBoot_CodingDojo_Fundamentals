@@ -1,0 +1,11 @@
+p{
+    margin: 0;
+}
+#respuesta_div{
+    background-color: black;
+    height: 250px;
+    overflow-y: scroll;
+}
+.adicion{
+    color: greenyellow;
+}
